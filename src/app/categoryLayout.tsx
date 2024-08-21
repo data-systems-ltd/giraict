@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Header } from './header';
 import { SideBar } from './sideBar';
+import Landing from '@/components/Landing';
 
 interface CategoryLayoutProps {
     children: ReactNode;
@@ -9,7 +10,7 @@ interface CategoryLayoutProps {
 export const CategoryLayout: React.FC<CategoryLayoutProps> = ({ children }) => {
     return (
         <div className="">
-            <Header />
+            <Landing />
         
         <div className="flex bg-white">
             <SideBar />

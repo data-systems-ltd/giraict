@@ -1,6 +1,6 @@
-// components/AirConditioner.tsx
 "use client";
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'; // Assuming you use Next.js. If not, use `react-router-dom`
 
 interface Product {
   _id: string;
@@ -13,11 +13,13 @@ interface Product {
   };
 }
 
+const computer: string = "../../../public/computer.jpg"
 const AirConditioner: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
+  const router = useRouter(); // For navigation
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +31,6 @@ const AirConditioner: React.FC = () => {
         const data = await res.json();
         setProducts(data);
       } catch (error) {
-        // Ensure error is of type Error and extract its message
         if (error instanceof Error) {
           setError(error.message);
         } else {
@@ -66,17 +67,18 @@ const AirConditioner: React.FC = () => {
 
   const productsToDisplay = showAll ? sortedProducts : sortedProducts.slice(0, 6);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+  const navigateToProductDetails = (productId: string) => {
+    router.push(`/product-details/${productId}`); // Modify the path based on your routing setup
+  };
 
   return (
     <div className="flex flex-col ml-8 mr-4">
       <h1 className="text-4xl text-[#F5ED4D] font-bold">Air Conditioners</h1>
-      <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-        In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
-        <div className="flex justify-between items-center my-4">
+      <p className='py-8'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
+        In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.
+      </p>
+      <div className="flex justify-between items-center my-4">
         <button
           className="text-blue-500 hover:underline"
           onClick={() => setShowAll(!showAll)}
@@ -100,21 +102,21 @@ const AirConditioner: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-cols flex-wrap gap-4">
-        {products.map(product => (
-          <div key={product._id} className="flex flex-wrap w-[300px] ">
-            <img src={product.image.url} alt={product.productName} className="w-full h-[250px] object-cover" />
+        {productsToDisplay.map(product => (
+          <div 
+            key={product._id} 
+            className="flex flex-wrap w-[300px] cursor-pointer" 
+            onClick={() => navigateToProductDetails(product._id)} // Add navigation
+          >
+            <img src={computer} className="w-full h-[250px] object-cover"/>
+            {/* <img src={product.image.url} alt={product.productName} className="w-full h-[250px] object-cover" /> */}
             <div className="mx-6 my-4">
-            <h2 className="text-xl font-bold mt-2">{product.productName}</h2>
-            <p className="text-sm text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-            In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec{product.description}</p>
-            <p className="text-lg text-gray-600">RWF {product.price}</p>
-            {/* <p className="text-sm text-green-500 font-bold mt-2">Category: {product.category}</p> */}
-            {/* <button
-              className="bg-green-500 text-white py-2 px-4 mt-4 rounded hover:bg-green-600"
-              onClick={() => handleAddToCart(product)}
-            >
-              Add to Cart
-            </button> */}
+              <h2 className="text-xl font-bold mt-2">{product.productName}</h2>
+              <p className="text-sm text-gray-700 mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
+                In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec. {product.description}
+              </p>
+              <p className="text-lg text-gray-600">RWF {product.price}</p>
             </div>
           </div>
         ))}

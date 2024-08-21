@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/navigation";
 import { SideBar } from "./sideBar";
 import { CategoryLayout } from "./categoryLayout";
 
@@ -21,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CategoryLayout>{children}</CategoryLayout>
+        {/* <main>{children}</main> */}
         
         </body>
     </html>
