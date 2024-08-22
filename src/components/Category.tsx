@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const categories = [
   {
@@ -41,7 +42,6 @@ const categories = [
     products: 5,
     image: '/electronic-store-category-image-01.jpg',
   },
-  
 ];
 
 const Category = () => {
@@ -49,17 +49,23 @@ const Category = () => {
     <div className="container mx-auto px-12 mt-24 border border-gray-200 rounded-lg">
       <div className="flex flex-wrap -mx-4">
         {categories.map((category, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8 mt-10">
+          <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
             <div className="bg-white rounded-lg overflow-hidden flex flex-col h-full">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="w-full h-48 object-cover"
-              />
+              <Link href="/product">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full h-48 object-cover"
+                />
+              </Link>
               <div className="p-4 flex flex-col h-full">
                 <div className="flex flex-col ml-[80px] mt-[-60px]">
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
-                  <span className="text-sm text-gray-600">{category.products} Products</span>
+                  <Link href="/product">
+                    <h3 className="text-lg font-semibold">{category.title}</h3>
+                  </Link>
+                  <Link href="/product">
+                    <span className="text-sm text-gray-600">{category.products} Products</span>
+                  </Link>
                 </div>
               </div>
             </div>

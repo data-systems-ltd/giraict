@@ -1,5 +1,4 @@
 import Landing from "@/components/Landing";
-import Product from "@/components/Product";
 import Sliders from "@/components/Sliders";
 import Category from "@/components/Category";
 import Brand from "@/components/Brand";
@@ -18,7 +17,6 @@ export default function Home() {
     <Category/>
     <Brand />
     <Footer />
-    <Product/>
   </main>
     </div>
 
