@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineStarOutline } from "react-icons/md";
 
 interface StarRatingProps {
   review: number;
@@ -9,19 +10,15 @@ const StarRating: React.FC<StarRatingProps> = ({ review, onReviewChange }) => {
   const stars = [1, 2, 3, 4, 5];
 
   return (
-    <div>
+    <div className="flex space-x-1">
       {stars.map(star => (
-        <span
+        <MdOutlineStarOutline
           key={star}
           onClick={() => onReviewChange(star)}
-          style={{
-            cursor: 'pointer',
-            color: star <= review ? '#FFD700' : '#ccc', // Highlight stars based on rating
-            fontSize: '24px',
-          }}
-        >
-          ★
-        </span>
+          className={`cursor-pointer text-xl ${
+            star <= review ? 'text-gray-300' : 'text-yellow-600'
+          } transition-colors duration-300`}
+        />
       ))}
     </div>
   );
