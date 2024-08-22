@@ -6,6 +6,9 @@ import electronic1 from "../assets/electronic1.jpg";
 import electronic2 from "../assets/electronic2.jpg";
 import electronic3 from "../assets/electronic3.jpg";
 import electronic4 from "../assets/electronic4.jpg";
+import Landing from "./Landing";
+import Footer from "./Footer";
+
 import {
   FaEye,
   FaArrowLeft,
@@ -19,7 +22,10 @@ function Product() {
   const [showDescription, setShowDescription] = useState(true);
 
   return (
-    <div className="bg-[#F7FBFC] min-h-screen">
+
+    <div>
+      <Landing/>
+    <div className="bg-[#F7FBFC] min-h-screen mt-24">
       <div className="max-w-6xl mx-auto p-2  ">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left side: Image */}
@@ -270,6 +276,10 @@ function Product() {
           </div>
         </div>
       </div>
+    </div>
+    <div>
+<Footer/>
+    </div>
     </div>
   );
 }
