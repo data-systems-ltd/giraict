@@ -1,12 +1,16 @@
 import Landing from "@/components/Landing";
 import Product from "@/components/Product";
-import Image from "next/image";
+import { CategoryLayout } from "@/components/categoryLayout"
+
+
 export default function Home() {
   return (
+    <div className="">
    <header>
   <Landing />
-  <Product/>
    </header>
-
+   {/* <CategoryLayout children={undefined} /> */}
+   <Product/>
+</div>
   );
 }

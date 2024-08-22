@@ -1,6 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'; // Assuming you use Next.js. If not, use `react-router-dom`
+import Image from "next/image";
+import Link from "next/link";
+import { ShoppingCart } from 'lucide-react';
+import electronic2 from "../../assets/electronic1.jpg";
+import electronic1 from '../../assets/conditioner1.jpg';
 
 interface Product {
   _id: string;
@@ -13,13 +17,11 @@ interface Product {
   };
 }
 
-const computer: string = "../../../public/computer.jpg"
 const AirConditioner: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
-  const router = useRouter(); // For navigation
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,19 +67,14 @@ const AirConditioner: React.FC = () => {
     }
   });
 
-  const productsToDisplay = showAll ? sortedProducts : sortedProducts.slice(0, 6);
-
-  const navigateToProductDetails = (productId: string) => {
-    router.push(`/product-details/${productId}`); // Modify the path based on your routing setup
-  };
+  // Determine the number of products to display based on showAll state
+  const productsToDisplay = showAll ? sortedProducts : sortedProducts.slice(0, 4);
 
   return (
     <div className="flex flex-col ml-8 mr-4">
       <h1 className="text-4xl text-[#F5ED4D] font-bold">Air Conditioners</h1>
-      <p className='py-8'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-        In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.
-      </p>
+      <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
+      In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
       <div className="flex justify-between items-center my-4">
         <button
           className="text-blue-500 hover:underline"
@@ -103,22 +100,45 @@ const AirConditioner: React.FC = () => {
       </div>
       <div className="flex flex-cols flex-wrap gap-4">
         {productsToDisplay.map(product => (
-          <div 
-            key={product._id} 
-            className="flex flex-wrap w-[300px] cursor-pointer" 
-            onClick={() => navigateToProductDetails(product._id)} // Add navigation
-          >
-            <img src={computer} className="w-full h-[250px] object-cover"/>
-            {/* <img src={product.image.url} alt={product.productName} className="w-full h-[250px] object-cover" /> */}
-            <div className="mx-6 my-4">
-              <h2 className="text-xl font-bold mt-2">{product.productName}</h2>
-              <p className="text-sm text-gray-700 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-                In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec. {product.description}
-              </p>
-              <p className="text-lg text-gray-600">RWF {product.price}</p>
+          <Link href={'/components/Product'} key={product._id}>
+            <div className="flex flex-wrap w-[300px] cursor-pointer">
+              <div className="relative group">
+                <img
+                  src={electronic1.src}
+                  alt="electronic1"
+                  width={300}
+                  height={250}
+                  className="w-full h-[250px] object-cover group-hover:hidden"
+                />
+                <img
+                  src={electronic2.src}
+                  alt="electronic2"
+                  width={300}
+                  height={250}
+                  className="w-full h-[250px] object-cover hidden group-hover:block"
+                />
+
+                <div className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-lg group-hover:opacity-100 opacity-0 transition-opacity duration-300">
+                  <ShoppingCart className="text-yellow-500" />
+                </div>
+              </div>
+
+              <div className="mx-6 my-4">
+                <h2 className="text-2xl font-bold mt-2">
+                Air Conditioner 5000 BTU, Efficient Cooling for Smaller Areas Like Bedrooms and Guest Rooms
+              
+                </h2>
+                <div className="mt-4">
+                  <span className="text-red-600 text-xl line-through">
+                    $1,499.00
+                  </span>
+                  <span className="text-yellow-600 text-2xl font-bold ml-2">
+                    $1,399.00
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

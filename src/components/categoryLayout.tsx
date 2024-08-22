@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Header } from './header';
-import { SideBar } from './sideBar';
+import { Header } from '../app/header';
+import { SideBar } from '../app/sideBar';
 import Landing from '@/components/Landing';
 
 interface CategoryLayoutProps {

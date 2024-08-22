@@ -1,6 +1,10 @@
-// components/AirConditioner.tsx
 "use client";
 import React, { useEffect, useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { ShoppingCart } from 'lucide-react';
+import electronic2 from "../../assets/electronic1.jpg";
+import electronic1 from '../../assets/conditioner1.jpg';
 
 interface Product {
   _id: string;
@@ -29,7 +33,6 @@ const AirConditioner: React.FC = () => {
         const data = await res.json();
         setProducts(data);
       } catch (error) {
-        // Ensure error is of type Error and extract its message
         if (error instanceof Error) {
           setError(error.message);
         } else {
@@ -64,19 +67,17 @@ const AirConditioner: React.FC = () => {
     }
   });
 
+  // Determine the number of products to display based on showAll state
   const productsToDisplay = showAll ? sortedProducts : sortedProducts.slice(0, 4);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
 
   return (
     <div className="flex flex-col ml-8 mr-4">
       <h1 className="text-4xl text-[#F5ED4D] font-bold">Home Appliances</h1>
-      <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-        In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
-        <div className="flex justify-between items-center my-4">
+      <p className='py-8'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
+        In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.
+      </p>
+      <div className="flex justify-between items-center my-4">
         <button
           className="text-blue-500 hover:underline"
           onClick={() => setShowAll(!showAll)}
@@ -101,22 +102,40 @@ const AirConditioner: React.FC = () => {
       </div>
       <div className="flex flex-cols flex-wrap gap-4">
         {products.map(product => (
+            <Link href={'/components/Product'} key={product._id}>
           <div key={product._id} className="flex flex-wrap w-[300px] ">
-            <img src={product.image.url} alt={product.productName} className="w-full h-[250px] object-cover" />
+            <div className="relative group">
+              <Image
+                src={electronic1}
+                alt="electronic1"
+                width={300}
+                height={250}
+                className="w-full h-[250px] object-cover group-hover:hidden"
+              />
+              <Image
+                src={electronic2}
+                alt="electronic2"
+                width={300}
+                height={250}
+                className="w-full h-[250px] object-cover hidden group-hover:block"
+              />
+              <div className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-lg group-hover:opacity-100 opacity-0 transition-opacity duration-300">
+                <ShoppingCart className="text-yellow-500" />
+              </div>
+            </div>
             <div className="mx-6 my-4">
-            <h2 className="text-xl font-bold mt-2">{product.productName}</h2>
-            <p className="text-sm text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
-            In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec{product.description}</p>
-            <p className="text-lg text-gray-600">RWF {product.price}</p>
-            {/* <p className="text-sm text-green-500 font-bold mt-2">Category: {product.category}</p> */}
-            {/* <button
-              className="bg-green-500 text-white py-2 px-4 mt-4 rounded hover:bg-green-600"
-              onClick={() => handleAddToCart(product)}
-            >
-              Add to Cart
-            </button> */}
+              <h2 className="text-2xl font-bold mt-2">0.9 Cubic Feet Capacity 900 Watts Kitchen Essentials for the Countertop Stainless Steel</h2>
+              <div className="mt-4">
+                <span className="text-red-600 text-xl line-through">
+                  $1,499.00
+                </span>
+                <span className="text-yellow-600 text-2xl font-bold ml-2">
+                  $1,399.00
+                </span>
+              </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>

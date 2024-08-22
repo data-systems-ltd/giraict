@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const SideBar = () =>{
  
     return (
-      <aside className="sidebar w-60 h-full bg-[#00080F] text-white"> 
+      <aside className="sidebar w-60 h-full border-r border-gray-300"> 
       <div className="p-10">
         <h1>Category</h1>
       </div>
