@@ -4,7 +4,7 @@ import Product from '@/components/Product';
 function page() {
   return (
     <div>
-<Product/>
+   <Product/>
     </div>
   )
 }
