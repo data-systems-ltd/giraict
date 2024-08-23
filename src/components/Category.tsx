@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
-import { CategoryLayout } from '../app/pages/categoryLayout';
+import Link from 'next/link'
+
+
 
 const categories = [
   {
@@ -52,7 +53,7 @@ const Category = () => {
         {categories.map((category, index) => (
           <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
             <div className="bg-white rounded-lg overflow-hidden flex flex-col h-full">
-              <Link href="/categoryLayout">
+              <Link href="/Category">
                 <img
                   src={category.image}
                   alt={category.title}
@@ -61,10 +62,10 @@ const Category = () => {
               </Link>
               <div className="p-4 flex flex-col h-full">
                 <div className="flex flex-col ml-[80px] mt-[-60px]">
-                  <Link href="/pages/categoryLayout">
+                  <Link href="/Category">
                     <h3 className="text-lg font-semibold">{category.title}</h3>
                   </Link>
-                  <Link href="/categoryLayout">
+                  <Link href="/Category">
                     <span className="text-sm text-gray-600">{category.products} Products</span>
                   </Link>
                 </div>

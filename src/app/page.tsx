@@ -18,6 +18,8 @@ export default function Home() {
     <Category/>
     <Brand />
     <Footer />
+  </main>
+  
   </main> */}
     </div>
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-
 export const SideBar = () => {
     return (
         <aside className="sidebar w-60 h-full border-b border-gray-300 md:border-b-0 md:border-r">
