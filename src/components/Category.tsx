@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link'
 
+
+
 const categories = [
   {
     title: 'Air Conditioner',
