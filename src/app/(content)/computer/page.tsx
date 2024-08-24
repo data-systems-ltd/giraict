@@ -173,7 +173,7 @@ const Computer: React.FC = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}
             >
-            <Link href={'/Product'} className="block w-full h-full">
+            <Link href={'/product'} className="block w-full h-full">
               <div className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.images.default}

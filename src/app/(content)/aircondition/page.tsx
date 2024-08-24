@@ -188,7 +188,7 @@ const AirConditioner: React.FC = () => {
                   className={`transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}
                 />
                 {product.sale && (
-                    <h3 className='absolute top-2 text-sm left-2 px-2 py-1 bg-white rounded-full'>
+                    <h3 className='absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full cursor-pointer'>
                       {product.sale}
                     </h3>
                   )}
