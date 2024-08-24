@@ -131,7 +131,7 @@ const AirConditioner: React.FC = () => {
 
   return (
     <div className="flex flex-col ml-8 mr-4">
-      <h1 className="text-4xl font-bold">Air Conditioners</h1>
+      <h1 className="text-4xl font-bold">Audio & Video</h1>
       <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
       In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
       <div className="flex justify-between items-center my-4">
@@ -169,7 +169,7 @@ const AirConditioner: React.FC = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}
             >
-            <Link href={'/Product'} className="block w-full h-full">
+            <Link href={'/product'} className="block w-full h-full">
               <div className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.images.default}
@@ -186,7 +186,7 @@ const AirConditioner: React.FC = () => {
                   className={`transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}
                 />
                 {product.sale && (
-                    <h3 className='absolute top-2 text-sm left-2 px-2 py-1 bg-white rounded-full'>
+                    <h3 className='absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full cursor-pointer'>
                       {product.sale}
                     </h3>
                   )}

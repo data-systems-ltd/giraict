@@ -127,7 +127,7 @@ const AirConditioner: React.FC = () => {
 
   return (
     <div className="flex flex-col ml-8 mr-4">
-      <h1 className="text-4xl font-bold">Air Conditioners</h1>
+      <h1 className="text-4xl font-bold">Kitchen Appliances</h1>
       <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
       In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
       <div className="flex justify-between items-center my-4">
@@ -161,7 +161,7 @@ const AirConditioner: React.FC = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <Link href={'/Product'} key={index}>
+            <Link href={'/product'} key={index}>
             <div className="relative group">
               <Image
                 src={product.images.default}
