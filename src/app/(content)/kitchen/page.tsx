@@ -161,7 +161,7 @@ const AirConditioner: React.FC = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <Link href={'/Product'} key={index}>
+            <Link href={'/product'} key={index}>
             <div className="relative group">
               <Image
                 src={product.images.default}
