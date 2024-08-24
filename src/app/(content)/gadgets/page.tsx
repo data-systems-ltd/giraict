@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
 import electronic2 from "../../assets/electronic1.jpg";
 import electronic1 from '../../assets/conditioner1.jpg';
-import Product from '@/components/Product';
 import StarRating from '../aircondition/starReview';
 
 // interface Product {
