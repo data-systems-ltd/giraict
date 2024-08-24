@@ -6,7 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 import electronic2 from "../../assets/electronic1.jpg";
 import electronic1 from '../../assets/conditioner1.jpg';
 import Product from '@/components/Product';
-import StarRating from '../aircondition/starReview';
+import StarRating from './starReview';
 
 // interface Product {
 //   _id: string;
@@ -34,63 +34,51 @@ interface Product {
 const products: Product[] = [
   {
     name: "Product 1",
-    description: "Health and Fitness Smartwatch with Heart Rate, Music, Alexa Built-In, Sleep and Swim Tracking",
+    description: "Air Conditioner 5000 BTU, Efficient Cooling for Smaller Areas Like Bedrooms and Guest Room",
     images: {
-      default: "/assets/smart.png",
-      hover: "/assets/phone1.jpg"
+      default: "/assets/conditioners2.png",
+      hover: "/assets/conditioner1.jpg"
     },
     category: "Air Conditioners",
-    currentPrice: 129.00
+    sale: "Sale!",
+    oldPrice: 159.00,
+    currentPrice: 139.00
   },
   {
     name: "Product 2",
-    description: "Home Speaker 500: Smart Bluetooth Speaker with Alexa Voice Control Built-In, White",
+    description: "BTU 115V Window-Mounted Air Conditioner with Remote Control White",
     images: {
-      default: "/assets/phone2.jpg",
-      hover: "/assets/phone2.jpg"
+      default: "/assets/conditioners2.png",
+      hover: "/assets/conditioner1.jpg"
     },
     category: "Category 2",
-    sale: "Sale!",
-    oldPrice: 229.00,
-    currentPrice: 259.00
+    currentPrice: 179.00
   },
   {
     name: "Product 3",
-    description: "Smart Speaker with Alexa Voice Control Built-in Compact Size with Incredible Sound for Any Room",
+    description: "Dual Hose Portable Air Conditioner, Dehumidifier, Fan with Activated Carbon Filter in Platinum",
     images: {
-      default: "/assets/washing1.png",
-      hover: "/assets/phone2.jpg"
+      default: "/assets/conditioners2.png",
+      hover: "/assets/conditioner1.jpg"
     },
     category: "Category 3",
-    sale: "Sale!",
-    oldPrice: 309.00,
-    currentPrice: 219.00
+    currentPrice: 149.00
   },
   {
     name: "Product 4",
-    description: "Smart Wifi Alexa Control, 6L Top Fill Cool Mist for Baby and Plants, Ultrasonic, Essential Oil Diffuser",
+    description: "Star 9,500 BTU 115V Dual Inverter Window Air Conditioner with Wi-Fi Control",
     images: {
-      default: "/assets/washing.png",
-      hover: "/assets/home1.jpg"
+      default: "/assets/conditioners2.png",
+      hover: "/assets/conditioner1.jpg"
     },
     category: "Category 4",
     currentPrice: 199.00
-  },
-  {
-    name: "Product 5",
-    description: "Smartwatch with Bright Touchscreen Display, Up to 6 Days of Battery Life, Orchid Purple",
-    images: {
-      default: "/assets/smart.png",
-      hover: "/assets/phone3.jpg"
-    },
-    category: "Category 5",
-    currentPrice: 299.00
   },
   
 ];
 
 
-const Computer: React.FC = () => {
+const AirConditioner: React.FC = () => {
   // const [products, setProducts] = useState<Product[]>([]);
   // const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -145,12 +133,12 @@ const Computer: React.FC = () => {
 
   return (
     <div className="flex flex-col ml-8 mr-4">
-      <h1 className="text-4xl font-bold">Smart Phone</h1>
+      <h1 className="text-4xl font-bold">Air Conditioners</h1>
       <p className='py-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis velit, iaculis vel risus non, convallis rhoncus ligula. Vestibulum ut lorem posuere, malesuada neque et, placerat quam. 
       In hac habitasse platea dictumst. Sed bibendum porttitor sem, at sollicitudin orci placerat nec.</p>
       <div className="flex justify-between items-center my-4">
         <button
-          className="text-blue-500 hover:underline"
+          className="text-red-600 hover:underline"
           onClick={() => setShowAll(!showAll)}
         >
           {showAll ? 'Show Less' : 'Show More Results'}
@@ -162,8 +150,8 @@ const Computer: React.FC = () => {
             value={sortOption}
             onChange={handleSortChange}
             className='rounded-md p-1'
-          >
-            <option value="">Defaul Sorting</option>
+            >
+              <option value="">Defaul Sorting</option>
             <option value="price-asc">Price: Low to High</option>
             <option value="price-desc">Price: High to Low</option>
             <option value="name-asc">Name: A to Z</option>
@@ -183,7 +171,7 @@ const Computer: React.FC = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}
             >
-            <Link href={'/Product'} className="block w-full h-full">
+            <Link href={'/product'} className="block w-full h-full">
               <div className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.images.default}
@@ -219,7 +207,7 @@ const Computer: React.FC = () => {
                     ${product.oldPrice.toFixed(2)}
                   </span>
                 )}
-                <span className="text-yellow-600 text-2xl font-bold">
+                <span className="text-yellow-600 text-xl font-bold">
                   ${product.currentPrice.toFixed(2)}
                 </span>
               </div>
@@ -231,4 +219,4 @@ const Computer: React.FC = () => {
   );
 };
 
-export default Computer;
+export default AirConditioner;
