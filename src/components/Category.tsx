@@ -7,41 +7,49 @@ const categories = [
   {
     title: 'Air Conditioner',
     products: 4,
+    href: '/aircondition',
     image: '/electronic-store-category-image-06.jpg',
   },
   {
     title: 'Audio & Video',
     products: 5,
+    href: '/audio&video',
     image: '/electronic-store-category-image-08.jpg',
   },
   {
     title: 'Gadgets',
     products: 2,
+    href: '/gadgets',
     image: '/electronic-store-category-image-02.jpg',
   },
   {
     title: 'Home Appliance',
     products: 5,
+    href: '/homeAppliances',
     image: '/electronic-store-category-image-07.jpg',
   },
   {
     title: 'Kitchen Appliance',
     products: 6,
+    href: '/kitchen',
     image: '/electronic-store-category-image-05.jpg',
   },
   {
     title: 'PC & Laptop',
     products: 4,
+    href: '/computer',
     image: '/electronic-store-category-image-03.jpg',
   },
   {
     title: 'Refrigerator',
     products: 4,
+    href: '/refregirator',
     image: '/electronic-store-category-image-04.jpg',
   },
   {
     title: 'Smart Home',
     products: 5,
+    href: '/phone',
     image: '/electronic-store-category-image-01.jpg',
   },
 ];
@@ -53,7 +61,7 @@ const Category = () => {
         {categories.map((category, index) => (
           <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
             <div className="bg-white rounded-lg overflow-hidden flex flex-col h-full">
-              <Link href="/Category">
+              <Link href={category.href}>
                 <img
                   src={category.image}
                   alt={category.title}
@@ -62,10 +70,10 @@ const Category = () => {
               </Link>
               <div className="p-4 flex flex-col h-full">
                 <div className="flex flex-col ml-[80px] mt-[-60px]">
-                  <Link href="/Category">
+                  <Link href={category.href}>
                     <h3 className="text-lg font-semibold">{category.title}</h3>
                   </Link>
-                  <Link href="/Category">
+                  <Link href={category.href}>
                     <span className="text-sm text-gray-600">{category.products} Products</span>
                   </Link>
                 </div>

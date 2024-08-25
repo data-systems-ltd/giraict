@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
-import electronic2 from "../../assets/electronic1.jpg";
-import electronic1 from '../../assets/conditioner1.jpg';
-import Product from '@/components/Product';
 import StarRating from '../aircondition/starReview';
 
 // interface Product {
@@ -187,7 +184,7 @@ const Computer: React.FC = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             key={index}
             >
-            <Link href={'/Product'} className="block w-full h-full">
+            <Link href={'/product'} className="block w-full h-full">
               <div className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.images.default}
@@ -204,7 +201,7 @@ const Computer: React.FC = () => {
                   className={`transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}
                 />
                 {product.sale && (
-                    <h3 className='absolute top-2 text-sm left-2 px-2 py-1 bg-white rounded-full'>
+                    <h3 className='absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full cursor-pointer'>
                       {product.sale}
                     </h3>
                   )}

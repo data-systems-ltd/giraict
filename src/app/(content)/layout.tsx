@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
-import { SideBar } from '@/app/sideBar';
+import { SideBar } from '@/app/(content)/sideBar';
 import Landing from '@/components/Landing';
 import Footer from '@/components/Footer';
+
 
 interface CategoryLayoutProps {
     children: ReactNode;

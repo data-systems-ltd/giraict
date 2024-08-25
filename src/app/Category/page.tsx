@@ -1,20 +1,21 @@
 import React, { ReactNode } from 'react';
-import { Header } from '../header';
-import { SideBar } from '../sideBar';
+import { SideBar } from '@/app/(content)/sideBar';
 import Landing from '@/components/Landing';
+import Footer from '@/components/Footer';
+
 
 interface CategoryLayoutProps {
     children: ReactNode;
 }
 
-export const CategoryLayout: React.FC<CategoryLayoutProps> = ({ children }) => {
+const CategoryLayout: React.FC<CategoryLayoutProps> = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col">
-            {/* Header at the top */}
+            {/* Header  */}
             <Landing />
 
             {/* Sidebar and main content stacked vertically */}
-            <div className="flex flex-col md:flex-row bg-white">
+            <div className="flex flex-col md:flex-row bg-white border-b border-b border-gray-300">
                 
                 {/* Sidebar */}
                 <div className="w-full md:w-60 flex justify-center md:justify-start">
@@ -28,6 +29,10 @@ export const CategoryLayout: React.FC<CategoryLayoutProps> = ({ children }) => {
                     </main>
                 </div>
             </div>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 };
+
+export default CategoryLayout
