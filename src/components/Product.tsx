@@ -228,7 +228,7 @@ function Product() {
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h3 className="text-lg font-semibold text-black">
-                14'' FHD Ultrabook
+                14  FHD Ultrabook
               </h3>
               <p className="text-gray-700 text-sm mb-2">
                 10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
@@ -244,7 +244,7 @@ function Product() {
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h3 className="text-lg font-semibold text-black">
-                15.6'' Rugged Ultrabook
+                15.6 Rugged Ultrabook
               </h3>
               <p className="text-gray-700 text-sm mb-2">
                 4K UHD - 3840 x 2160 - Intel Core i7 11th Gen, 32GB RAM, 1TB SSD
@@ -264,7 +264,7 @@ function Product() {
                 Sale!
               </span>
               <h3 className="text-lg font-semibold text-black">
-                15.6'' FHD Display Laptop
+                15.6 FHD Display Laptop
               </h3>
               <p className="text-gray-700 text-sm mb-2">
                 Intel i7, Intel HD Graphics 6000, Webcam, WiFi, Bluetooth, HDMI,
