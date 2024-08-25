@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IoIosBasket } from "react-icons/io";
 import { ShoppingCart, Search } from 'lucide-react';
-
+import LL from "../assets/Logo.jpeg";
 const Landing = () => {
   return (
     <nav className="bg-[#00080F] text-white p-4 flex flex-col md:flex-row items-center justify-between lg:px-8">
       <div className="hidden md:flex flex-1 items-center justify-between mx-4">
         <div className="flex items-center pl-24">
           <Link href="/">
-            <Image src="/logo.jpeg" alt="Logo" width={120} height={40} />
+            <Image src={LL} alt="Logo" width={120} height={40} />
           </Link>
         </div>
         <div className="relative w-full max-w-md mx-4">

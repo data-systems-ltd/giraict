@@ -12,12 +12,14 @@ export default function Home() {
    <header>
   <Landing />
    </header>
+   
   <main>
     <Sliders/>
     <Category/>
     <Brand />
     <Footer />
   </main>
+  
     </div>
 
 
