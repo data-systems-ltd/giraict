@@ -122,7 +122,7 @@ const AirConditioner: React.FC = () => {
         {productsToDisplay.map((product, index) => (
           <div
           key={index}
-          className="relative flex flex-col w-[300px] cursor-pointer overflow-hidden group"
+            className="relative flex flex-col w-[300px] cursor-pointer overflow-hidden group"
             
           >
             <div 

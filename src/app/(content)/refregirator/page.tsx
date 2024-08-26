@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
 import StarRating from '../aircondition/starReview';
 
-
 interface Product {
   name: string;
   description: string;
@@ -121,6 +120,7 @@ const AirConditioner: React.FC = () => {
         {productsToDisplay.map((product, index) => (
           
           <div
+          key={index}
             className="flex flex-col w-[300px] cursor-pointer"
             key={index}
             onMouseEnter={() => setHoveredIndex(index)}
