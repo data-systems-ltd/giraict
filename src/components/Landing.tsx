@@ -21,6 +21,7 @@ const Landing = () => {
           <div className="absolute top-1/2 left-3 transform -translate-y-1/2">
             <Search size={20} />
           </div>
+          
         </div>
         <div className="flex items-center pr-24 space-x-4">
           <Link href="/shop">
