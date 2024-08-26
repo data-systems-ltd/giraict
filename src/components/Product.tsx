@@ -30,7 +30,6 @@ function Product() {
 
   return (
     <div>
-      <Landing />
       <div className="max-w-6xl mx-auto p-4  ">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left side: Image */}
@@ -321,9 +320,9 @@ function Product() {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

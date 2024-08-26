@@ -122,7 +122,6 @@ const AirConditioner: React.FC = () => {
           <div
           key={index}
             className="flex flex-col w-[300px] cursor-pointer"
-            key={index}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
