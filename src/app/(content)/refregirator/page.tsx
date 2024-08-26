@@ -150,6 +150,7 @@ const AirConditioner: React.FC = () => {
         {productsToDisplay.map((product, index) => (
           
           <div
+          key={index}
             className="flex flex-col w-[300px] cursor-pointer"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}

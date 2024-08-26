@@ -162,6 +162,7 @@ const Computer: React.FC = () => {
       <div className="flex flex-wrap gap-4">
         {productsToDisplay.map((product, index) => (
           <div
+          key={index}
             className="relative flex flex-col w-[300px] cursor-pointer overflow-hidden group"
             
           >

@@ -6,7 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 import electronic2 from "../../assets/electronic1.jpg";
 import electronic1 from '../../assets/conditioner1.jpg';
 import Product from '@/components/Product';
-// import StarRating from './starReview';
+import StarRating from './starReview';
 
 // interface Product {
 //   _id: string;
@@ -162,6 +162,7 @@ const AirConditioner: React.FC = () => {
       <div className="flex flex-wrap gap-4">
         {productsToDisplay.map((product, index) => (
           <div
+          key={index}
             className="relative flex flex-col w-[300px] cursor-pointer overflow-hidden group"
             
           >
