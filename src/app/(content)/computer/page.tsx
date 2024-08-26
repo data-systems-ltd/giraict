@@ -3,19 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
-import Product from '@/components/Product';
 import StarRating from '../aircondition/starReview';
 
-// interface Product {
-//   _id: string;
-//   productName: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: {
-//     url: string;
-//   };
-// }
 
 interface Product {
   name: string;
@@ -79,36 +68,10 @@ const products: Product[] = [
 
 
 const Computer: React.FC = () => {
-  // const [products, setProducts] = useState<Product[]>([]);
-  // const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch("https://pizza-shop-app.onrender.com/products/productList");
-  //       if (!res.ok) {
-  //         throw new Error(`Error: ${res.statusText}`);
-  //       }
-  //       const data = await res.json();
-  //       setProducts(data);
-  //     } catch (error) {
-  //       if (error instanceof Error) {
-  //         setError(error.message);
-  //       } else {
-  //         setError("An unknown error occurred");
-  //       }
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // if (error) {
-  //   return <div>Error: {error}</div>;
-  // }
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
@@ -144,7 +107,6 @@ const Computer: React.FC = () => {
           {showAll ? 'Show Less' : 'Show More Results'}
         </button>
         <div className='flex items-center'>
-          {/* <label htmlFor="sort" className='mr-2'>Sort By:</label> */}
           <select
             id="sort"
             value={sortOption}
@@ -172,7 +134,9 @@ const Computer: React.FC = () => {
             key={index}
             >
             <Link href={'/product'} className="block w-full h-full">
-              <div className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
+              <div 
+              key={index}
+              className="relative w-full h-[250px] bg-[#f7f7f9] flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.images.default}
                   alt={product.name}
@@ -188,7 +152,7 @@ const Computer: React.FC = () => {
                   className={`transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}
                 />
                 {product.sale && (
-                    <h3 className='absolute top-2 text-sm left-2 px-2 py-1 bg-white rounded-full'>
+                    <h3 className='absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full cursor-pointer'>
                       {product.sale}
                     </h3>
                   )}
