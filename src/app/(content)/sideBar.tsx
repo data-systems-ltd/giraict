@@ -8,6 +8,7 @@ export const SideBar = () => {
             </div>
             <ul className="space-y-2 p-12">
                 <li><Link href="/aircondition">Air Conditioner</Link></li>
+                <li><Link href="/audio&video">Gadgets</Link></li>
                 <li><Link href="/gadgets">Gadgets</Link></li>
                 <li><Link href="/homeAppliances">Home Appliances</Link></li>
                 <li><Link href="/kitchen">Kitchen Appliances</Link></li>
