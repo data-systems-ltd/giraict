@@ -15,7 +15,7 @@ const CategoryLayout: React.FC<CategoryLayoutProps> = ({ children }) => {
             <Landing />
 
             {/* Sidebar and main content stacked vertically */}
-            <div className="flex flex-col md:flex-row bg-white border-b border-b border-gray-300">
+            <div className="flex flex-col md:flex-row bg-white border-b border-gray-300">
                 
                 {/* Sidebar */}
                 <div className="w-full md:w-60 flex justify-center md:justify-start">
