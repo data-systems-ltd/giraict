@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaCcPaypal, FaCcVisa, FaCcMastercard } from 'react-icons/fa';
 import { FaCcStripe } from 'react-icons/fa6';
-
+import LL from "../assets/Logo.jpeg";
 const Footer = () => {
   return (
     <footer className="text-white mt-8">
@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0 text-center md:text-left">
             <Link href="/">
-              <Image src="/logo.jpeg" alt="Logo" width={120} height={40} className="mx-auto md:mx-0" />
+              <Image src={LL} alt="Logo" width={120} height={40} className="mx-auto md:mx-0" />
             </Link>
           </div>
 

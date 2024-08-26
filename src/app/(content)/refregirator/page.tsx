@@ -8,17 +8,6 @@ import electronic1 from '../../assets/conditioner1.jpg';
 import Product from '@/components/Product';
 import StarRating from '../aircondition/starReview';
 
-// interface Product {
-//   _id: string;
-//   productName: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: {
-//     url: string;
-//   };
-// }
-
 interface Product {
   name: string;
   description: string;
