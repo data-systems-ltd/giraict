@@ -66,36 +66,10 @@ const products: Product[] = [
 
 
 const AirConditioner: React.FC = () => {
-  // const [products, setProducts] = useState<Product[]>([]);
-  // const [error, setError] = useState<string | null>(null);
+  
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch("https://pizza-shop-app.onrender.com/products/productList");
-  //       if (!res.ok) {
-  //         throw new Error(`Error: ${res.statusText}`);
-  //       }
-  //       const data = await res.json();
-  //       setProducts(data);
-  //     } catch (error) {
-  //       if (error instanceof Error) {
-  //         setError(error.message);
-  //       } else {
-  //         setError("An unknown error occurred");
-  //       }
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // if (error) {
-  //   return <div>Error: {error}</div>;
-  // }
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
@@ -194,7 +168,6 @@ const AirConditioner: React.FC = () => {
               </div>
             </div>
           </div>
-  
         ))}
       </div>
     </div>
