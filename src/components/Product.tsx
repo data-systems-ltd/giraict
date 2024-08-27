@@ -143,7 +143,6 @@ function Product() {
               </div>
             </div>
           </div>
-
           <div className="mt-8">
             <div className="flex items-center gap-4 text-gray-600 text-sm border-t-2 border-gray-300 pt-4">
               <span
@@ -318,7 +317,7 @@ function Product() {
           {/* Product 3 */}
           <div className="p-4 rounded-lg cursor-pointer group relative">
             <Image
-              src={electronic3}
+              src={electronic1}
               alt="15'' UHD Gaming Laptop"
               className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
             />
@@ -326,7 +325,21 @@ function Product() {
               Sale!
             </span>
             <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <IoCartSharp className="text-3xl text-yellow-600" />
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
             </div>
             <h3 className="text-lg font-medium text-black mb-2">
               15 UHD Gaming Laptop
@@ -341,7 +354,7 @@ function Product() {
           {/* Product 4 */}
           <div className="p-4 rounded-lg cursor-pointer group relative">
             <Image
-              src={electronic3}
+              src={electronic1}
               alt="15'' UHD Gaming Laptop"
               className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
             />
@@ -349,7 +362,21 @@ function Product() {
               Sale!
             </span>
             <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <IoCartSharp className="text-3xl text-yellow-600" />
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
             </div>
             <h3 className="text-lg font-medium text-black mb-2">
               15 UHD Gaming Laptop
