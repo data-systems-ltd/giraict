@@ -11,14 +11,6 @@ import Landing from "./Landing";
 import Footer from "./Footer";
 import Link from "next/link";
 
-import {
-  FaEye,
-  FaArrowLeft,
-  FaArrowRight,
-  FaSearchPlus,
-  FaSearchMinus,
-} from "react-icons/fa";
-
 function Product() {
   const [mainImage, setMainImage] = useState(electronic1);
   const [showDescription, setShowDescription] = useState(true);
@@ -32,9 +24,10 @@ function Product() {
   return (
     <div>
       <Landing />
-
+         
       <div className="flex flex-col md:flex-row max-w-6xl mx-auto p-2">
         {/* Sidebar */}
+        
         <aside className="w-full md:w-1/4 border-b border-gray-300 md:border-b-0 md:border-r p-4 md:p-8">
           <div>
             <h1 className="text-2xl font-semibold mb-4">Category</h1>
@@ -64,14 +57,6 @@ function Product() {
                 <Link href="/phone">Smart Home</Link>
               </li>
             </ul>
-          </div>
-          <div className="mt-8">
-            <h1 className="text-2xl font-semibold mb-4">Filter by Price</h1>
-            {/* Additional filter elements here */}
-          </div>
-          <div className="mt-8">
-            <h1 className="text-2xl font-semibold">Average Rating</h1>
-            {/* Additional rating elements here */}
           </div>
         </aside>
 
@@ -107,7 +92,7 @@ function Product() {
 
             {/* Right side: Product Details */}
             <div className="md:w-1/2">
-              <div className="text-gray-600 text-sm mb-2">
+              <div className="text-gray-600 text-base mb-2">
                 <Link href="/">Home</Link> /{" "}
                 <Link href="/computer">PCs & Laptop</Link>
               </div>
@@ -255,256 +240,256 @@ function Product() {
         </div>
       </div>
       {/* related product */}
-<div className="mt-12 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <h2 className="text-2xl font-semibold text-black mb-6">
-    Related products
-  </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {/* Product 1 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic1}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
-        Sale!
-      </span>
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-      <p className="text-red-600 text-sm line-through">$1,029.00</p>
-    </div>
+      <div className="mt-12 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-semibold text-black mb-6">
+          Related products
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Product 1 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic1}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
+              Sale!
+            </span>
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+            <p className="text-red-600 text-sm line-through">$1,029.00</p>
+          </div>
 
-    {/* Product 2 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic2}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-    </div>
+          {/* Product 2 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic2}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+          </div>
 
-    {/* Product 3 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic3}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
-        Sale!
-      </span>
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <IoCartSharp className="text-3xl text-yellow-600" />
+          {/* Product 3 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic3}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
+              Sale!
+            </span>
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <IoCartSharp className="text-3xl text-yellow-600" />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+            <p className="text-red-600 text-sm line-through">$1,029.00</p>
+          </div>
+
+          {/* Product 4 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic3}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
+              Sale!
+            </span>
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <IoCartSharp className="text-3xl text-yellow-600" />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+            <p className="text-red-600 text-sm line-through">$1,029.00</p>
+          </div>
+          {/* Product 2 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic2}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+          </div>
+          {/* Product 2 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic2}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+          </div>
+          {/* Product 2 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic2}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+          </div>
+          {/* Product 2 */}
+          <div className="p-4 rounded-lg cursor-pointer group relative">
+            <Image
+              src={electronic2}
+              alt="15'' UHD Gaming Laptop"
+              className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
+            />
+            <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+              {/* Add to Cart Button */}
+              {isButtonVisible && (
+                <button
+                  className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  onClick={() => {
+                    /* Handle add to cart logic */
+                  }}
+                >
+                  Add to Cart
+                </button>
+              )}
+              <IoCartSharp
+                className="text-3xl text-yellow-600 cursor-pointer"
+                onClick={handleIconClick}
+              />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              15 UHD Gaming Laptop
+            </h3>
+            <p className="text-gray-700 text-base mb-2">
+              10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
+            </p>
+            <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
+          </div>
+        </div>
       </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-      <p className="text-red-600 text-sm line-through">$1,029.00</p>
-    </div>
-    
-    {/* Product 4 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic3}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <span className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-sm rounded-full">
-        Sale!
-      </span>
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <IoCartSharp className="text-3xl text-yellow-600" />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-      <p className="text-red-600 text-sm line-through">$1,029.00</p>
-    </div>
-    {/* Product 2 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic2}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-    </div>
-    {/* Product 2 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic2}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-    </div>
-    {/* Product 2 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic2}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-    </div>
-    {/* Product 2 */}
-    <div className="p-4 rounded-lg cursor-pointer group relative">
-      <Image
-        src={electronic2}
-        alt="15'' UHD Gaming Laptop"
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg"
-      />
-      <div className="absolute top-2 right-2 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-        {/* Add to Cart Button */}
-        {isButtonVisible && (
-          <button
-            className="bg-yellow-600 text-white px-2 py-2 rounded-s-sm shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            onClick={() => {
-              /* Handle add to cart logic */
-            }}
-          >
-            Add to Cart
-          </button>
-        )}
-        <IoCartSharp
-          className="text-3xl text-yellow-600 cursor-pointer"
-          onClick={handleIconClick}
-        />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">
-        15 UHD Gaming Laptop
-      </h3>
-      <p className="text-gray-700 text-base mb-2">
-        10th Gen Intel i7-10510U, 16GB RAM, 1TB PCIe SSD, Windows 11 Pro
-      </p>
-      <p className="text-yellow-600 text-2xl font-bold">$1,399.00</p>
-    </div>
-  </div>
-</div>
 
       <Footer />
     </div>
