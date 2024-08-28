@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { SideBar } from '@/app/(content)/sideBar';
+import { SideBar } from './sideBar';
 import Landing from '@/components/Landing';
 import Footer from '@/components/Footer';
 

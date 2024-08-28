@@ -61,7 +61,7 @@ const Category = () => {
         {categories.map((category, index) => (
           <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
             <div className="bg-white rounded-lg overflow-hidden flex flex-col h-full">
-              <Link href={category.href}>
+              <Link href={'./product'}>
                 <img
                   src={category.image}
                   alt={category.title}
@@ -70,10 +70,10 @@ const Category = () => {
               </Link>
               <div className="p-4 flex flex-col h-full">
                 <div className="flex flex-col ml-[80px] mt-[-60px]">
-                  <Link href={category.href}>
+                  <Link href={'./product'}>
                     <h3 className="text-lg font-semibold">{category.title}</h3>
                   </Link>
-                  <Link href={category.href}>
+                  <Link href={'./product'}>
                     <span className="text-sm text-gray-600">{category.products} Products</span>
                   </Link>
                 </div>

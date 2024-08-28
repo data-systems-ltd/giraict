@@ -69,8 +69,6 @@ const AirConditioner: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
   };
