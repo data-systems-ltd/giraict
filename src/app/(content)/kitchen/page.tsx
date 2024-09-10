@@ -63,7 +63,7 @@ const products: Product[] = [
 ];
 
 
-const AirConditioner: React.FC = () => {
+const Kitchen: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -122,7 +122,6 @@ const AirConditioner: React.FC = () => {
           <div
           key={index}
             className="flex flex-col w-[300px] cursor-pointer"
-            key={index}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -171,4 +170,4 @@ const AirConditioner: React.FC = () => {
   );
 };
 
-export default AirConditioner;
+export default Kitchen;

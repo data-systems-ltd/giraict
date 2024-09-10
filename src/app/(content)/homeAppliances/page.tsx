@@ -80,7 +80,7 @@ const products: Product[] = [
 ];
 
 
-const Computer: React.FC = () => {
+const HomeAppliances: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -195,4 +195,4 @@ const Computer: React.FC = () => {
   );
 };
 
-export default Computer;
+export default HomeAppliances;

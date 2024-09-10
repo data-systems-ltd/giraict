@@ -62,7 +62,7 @@ const products: Product[] = [
 ];
 
 
-const AirConditioner: React.FC = () => {
+const Refregirator: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -168,4 +168,4 @@ const AirConditioner: React.FC = () => {
   );
 };
 
-export default AirConditioner;
+export default Refregirator;

@@ -24,7 +24,7 @@ const Landing = () => {
           
         </div>
         <div className="flex items-center pr-24 space-x-4">
-          <Link href="/shop">
+          <Link href="/cart">
             <div className="flex items-center text-white hover:text-yellow-500">
               <IoIosBasket size={30} color="white" /> 
             </div>
@@ -43,12 +43,12 @@ const Landing = () => {
             <Image src="/logo.jpeg" alt="Logo" width={120} height={40} />
           </Link>
           <div className="flex items-center space-x-4">
-            <Link href="/shop">
+            <Link href="/cart">
               <div className="flex items-center text-white hover:text-yellow-500">
                 <IoIosBasket size={30} />
               </div>
             </Link>
-            <Link href="/login">
+            <Link href="/pages/auth/login">
               <div className="flex items-center text-white hover:text-yellow-500">
                 <span className="ml-2">Login</span>
               </div>

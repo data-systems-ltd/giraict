@@ -4,6 +4,8 @@ import Category from "@/components/Category";
 import Brand from "@/components/Brand";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Login from "./pages/auth/login";
+import Signup from "./pages/auth/signup";
 
 
 export default function Home() {
@@ -14,6 +16,7 @@ export default function Home() {
    </header>
    
   <main>
+    {/* <Login /> */}
     <Sliders/>
     <Category/>
     <Brand />
