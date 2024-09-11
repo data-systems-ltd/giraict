@@ -30,7 +30,7 @@ const Landing = () => {
             </div>
           </Link>
           <Link href="/login">
-            <div className="flex items-center text-white hover:text-yellow-500">
+            <div className="flex items-center text-white hover:text-[#f5ed4d]">
               <span className="ml-2">Login</span>
             </div>
           </Link>
@@ -40,7 +40,7 @@ const Landing = () => {
       <div className="md:hidden flex flex-col items-center w-full">
         <div className="flex justify-between w-full px-4 mb-4">
           <Link href="/">
-            <Image src="/logo.jpeg" alt="Logo" width={120} height={40} />
+            <Image src={LL} alt="Logo" width={120} height={40} />
           </Link>
           <div className="flex items-center space-x-4">
             <Link href="/cart">
@@ -48,7 +48,7 @@ const Landing = () => {
                 <IoIosBasket size={30} />
               </div>
             </Link>
-            <Link href="/pages/auth/login">
+            <Link href="/login">
               <div className="flex items-center text-white hover:text-yellow-500">
                 <span className="ml-2">Login</span>
               </div>

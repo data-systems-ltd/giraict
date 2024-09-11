@@ -3,9 +3,9 @@ import Sliders from "@/components/Sliders";
 import Category from "@/components/Category";
 import Brand from "@/components/Brand";
 import Footer from "@/components/Footer";
-import Image from "next/image";
-import Login from "./pages/auth/login";
-import Signup from "./pages/auth/signup";
+import Deal from '@/components/Deal'
+import Contact from "@/components/Contact"
+
 
 
 export default function Home() {
@@ -14,12 +14,13 @@ export default function Home() {
    <header>
   <Landing />
    </header>
-   
   <main>
     {/* <Login /> */}
     <Sliders/>
     <Category/>
     <Brand />
+    <Deal/>
+    <Contact/>
     <Footer />
   </main>
   
