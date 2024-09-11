@@ -3,7 +3,8 @@ import Sliders from "@/components/Sliders";
 import Category from "@/components/Category";
 import Brand from "@/components/Brand";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import Deal from '@/components/Deal'
+import Contact from "@/components/Contact"
 
 
 export default function Home() {
@@ -12,11 +13,12 @@ export default function Home() {
    <header>
   <Landing />
    </header>
-   
   <main>
     <Sliders/>
     <Category/>
     <Brand />
+    <Deal/>
+    <Contact/>
     <Footer />
   </main>
   

@@ -57,9 +57,10 @@ const categories = [
 const Category = () => {
   return (
     <div className="container mx-auto px-12 mt-24 border border-gray-200 rounded-lg">
-      <div className="flex flex-wrap -mx-4">
+       <h2 className="text-2xl font-bold mb-4  mt-11 ml-4">Categories</h2>
+      <div className="flex flex-wrap -mx-4 mt-14">
         {categories.map((category, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+          <div key={index} className="w-full sm:w-1/2 lg:w-1/4 px-4">
             <div className="bg-white rounded-lg overflow-hidden flex flex-col h-full">
               <Link href={'./product'}>
                 <img
