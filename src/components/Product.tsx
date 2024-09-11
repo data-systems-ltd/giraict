@@ -23,43 +23,8 @@ function Product() {
 
   return (
     <div>
-      <Landing />
-         
-      <div className="flex flex-col md:flex-row max-w-6xl mx-auto p-2">
-        {/* Sidebar */}
-        
-        <aside className="w-full md:w-1/4 border-b border-gray-300 md:border-b-0 md:border-r p-4 md:p-8">
-          <div>
-            <h1 className="text-2xl font-semibold mb-4">Category</h1>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/aircondition">Air Conditioner</Link>
-              </li>
-              <li>
-                <Link href="/audio&video">Audio & Video</Link>
-              </li>
-              <li>
-                <Link href="/gadgets">Gadgets</Link>
-              </li>
-              <li>
-                <Link href="/homeAppliances">Home Appliances</Link>
-              </li>
-              <li>
-                <Link href="/kitchen">Kitchen Appliances</Link>
-              </li>
-              <li>
-                <Link href="/computer">PCs & Laptop</Link>
-              </li>
-              <li>
-                <Link href="/refrigerator">Refrigerator</Link>
-              </li>
-              <li>
-                <Link href="/phone">Smart Home</Link>
-              </li>
-            </ul>
-          </div>
-        </aside>
 
+      <div className="flex flex-col md:flex-row max-w-6xl mx-auto p-2">
         {/* Product Content */}
         <div className="w-full md:w-3/4 p-4 md:p-8">
           <div className="flex flex-col md:flex-row gap-8">
@@ -539,8 +504,6 @@ function Product() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Deal from '@/components/Deal'
 import Contact from "@/components/Contact"
 
 
+
 export default function Home() {
   return (
     <div className="bg-[E5DFDF]-800">
@@ -14,6 +15,7 @@ export default function Home() {
   <Landing />
    </header>
   <main>
+    {/* <Login /> */}
     <Sliders/>
     <Category/>
     <Brand />

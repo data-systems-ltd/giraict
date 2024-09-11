@@ -3,21 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
-import electronic2 from "../../assets/electronic1.jpg";
-import electronic1 from '../../assets/conditioner1.jpg';
-import Product from '@/components/Product';
 import StarRating from './starReview';
 
-// interface Product {
-//   _id: string;
-//   productName: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: {
-//     url: string;
-//   };
-// }
 
 interface Product {
   name: string;
@@ -79,13 +66,9 @@ const products: Product[] = [
 
 
 const AirConditioner: React.FC = () => {
-  
   const [showAll, setShowAll] = useState(false);
   const [sortOption, setSortOption] = useState('');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  
-
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
   };
@@ -120,7 +103,6 @@ const AirConditioner: React.FC = () => {
           {showAll ? 'Show Less' : 'Show More Results'}
         </button>
         <div className='flex items-center'>
-          {/* <label htmlFor="sort" className='mr-2'>Sort By:</label> */}
           <select
             id="sort"
             value={sortOption}
